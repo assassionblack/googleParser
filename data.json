@@ -1,42 +1,42 @@
 [
     {
-        "link": "https://www.freecodecamp.org/news/python-projects-for-beginners/",
-        "text": "25 Python Projects for Beginners – Easy Ideas to Get Started ...",
-        "description": "13 сент. 2021 г. — Python Projects You Can Build · Mad Libs · Guess the Number Game (computer) · Guess the Number Game (user) · Rock, paper, scissors · Hangman ..."
+        "link": "https://tomassetti.me/parsing-in-python/",
+        "text": "Parsing in Python: all the tools and libraries you can use",
+        "description": "We present and compare all possible alternatives you can use to parse languages in Python. From libraries to parser generators, we present all options."
     },
     {
-        "link": "https://realpython.com/tutorials/projects/",
-        "text": "Python Projects - Real Python",
-        "description": "All project-based Python tutorials on Real Python. ... With this list of Python projects (including full source code) you'll gain practical coding skills, ..."
+        "link": "https://docs.python.org/3.7/library/parser.html",
+        "text": "parser — Access Python parse trees — Python 3.7.14 ...",
+        "description": "9 сент. 2022 г. — The parser module provides an interface to Python's internal parser and byte-code compiler. The primary purpose for this interface is to allow ..."
     },
     {
-        "link": "https://hackr.io/blog/python-projects",
-        "text": "30 Cool, Easy & Fun Python Projects with Source Code [2023]",
-        "description": "In this article, we've listed 30 interesting Python projects, ranging from simple Python projects for beginners to intermediate and advanced Python project ..."
+        "link": "https://devguide.python.org/internals/parser/",
+        "text": "Guide to the Parser",
+        "description": "A parser generator that can read a grammar file and produce a PEG parser written in Python or C that can parse said grammar. · A PEG meta-grammar that ..."
     },
     {
-        "link": "https://medium.com/coders-camp/60-python-projects-with-source-code-919cd8a6e512",
-        "text": "60 Python Projects with Source Code - Medium",
-        "description": "Create Audiobook with Python · Face Detection · Extract Text from PDF · Card Game using DS and Algo · Web Scrapper with Python · Create a Pencil Sketch using ..."
+        "link": "https://www.stechies.com/parsing-python/",
+        "text": "Parsing in Python - STechies",
+        "description": "Parsing is defined as the process of converting codes to machine language to analyze the correct syntax of the code. Python provides a library called a parser."
     },
     {
-        "link": "https://data-flair.training/blogs/python-project-ideas/",
-        "text": "Python Projects for 2023 – Work on Real-time ... - DataFlair",
-        "description": "Python Project Idea – The objective of this project is to implement an alarm clock using Python. Python consists of very useful libraries such as datetime and ..."
+        "link": "https://www.educba.com/python-parser/",
+        "text": "Python Parser | Working of Python Parse with different Examples",
+        "description": "In this article, parsing is defined as the processing of a piece of python program and converting these codes into machine language. In general, we can say ..."
     },
     {
-        "link": "https://www.upgrad.com/blog/python-projects-ideas-topics-beginners/",
-        "text": "42 Exciting Python Project Ideas & Topics for Beginners [2023]",
-        "description": "4 окт. 2022 г. — This is one of the simple python projects yet an exciting one. You can even call it a mini-game. This project is particularly useful for ..."
+        "link": "https://vipinajayakumar.com/parsing-text-with-python/",
+        "text": "Parsing text with Python - vipinajayakumar",
+        "description": "7 янв. 2018 г. — Step 1: Understand the input format · Step 2: Import the required packages · Step 3: Define regular expressions · Step 4: Write a line parser · Step ..."
     },
     {
-        "link": "https://www.geeksforgeeks.org/python-projects-beginner-to-advanced/",
-        "text": "Python Projects - Beginner to Advanced - GeeksforGeeks",
-        "description": "23 июн. 2021 г. — More Projects on Python · Tic Tac Toe GUI In Python using PyGame · 8-bit game using pygame · Bubble sort visualizer using PyGame · Create a Voice ..."
+        "link": "https://pypi.org/project/parse/",
+        "text": "parse - PyPI",
+        "description": "Project description. Parse strings using a specification based on the Python format() syntax. parse() is the opposite of format()."
     },
     {
-        "link": "https://www.interviewbit.com/blog/python-projects/",
-        "text": "Top Python Projects for Beginners to Advanced With Source ...",
-        "description": "25 сент. 2022 г. — Table Of Contents show Top 10 Python Projects for Beginners Top 12 Python Project Ideas for Intermediate Top 5 Python Project Ideas for ..."
+        "link": "https://github.com/lark-parser/lark",
+        "text": "lark-parser/lark: Lark is a parsing toolkit for Python ... - GitHub",
+        "description": "Lark - a parsing toolkit for Python · Parse all context-free grammars, and handle any ambiguity gracefully · Build an annotated parse-tree automagically, no ..."
     }
 ]

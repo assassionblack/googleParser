@@ -13,45 +13,46 @@ from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 
+"""
+SHOW: enable displaying Firefox driver
+settings for proxying traffic:
+    PROXY: enable proxy
+    PROXY_TYPE: set type of proxy: 'tor', 'proxy' or 'proxy_pac
+    PROXY_HTTP: set address of proxy
+    PROXY_PORT: set port of proxy
+    PROXY_PAC: set address or path of proxy.pac file
+"""
+SHOW: bool = True
+PROXY: bool = True
+PROXY_TYPE: str = 'tor'
+PROXY_HTTP: str = '127.0.0.1'
+PROXY_PORT: int = 9050
+PROXY_PAC: str = ''
 
-def init_driver(
-        show: bool = False,
-        proxy: bool = False,
-        proxy_type: str = '',
-        proxy_http: str = '',
-        proxy_port: int = 0,
-        proxy_pac: str = ''):
+
+def init_driver():
     """
     Initial web driver (firefox),
-    :param: show: show firefox webdriver window
-    :param: proxy: enable proxy
-    :param: proxy_type: enter proxy type, valid values:
-                'tor'—for connect to tor proxy, 
-                'proxy'—for connect to proxy,
-                'proxy_pac'—for connect by proxy.pac file or net address of proxy.pac file
-    :param: proxy_http: enter ip of http proxy
-    :param: proxy_port: enter port http proxy
-    :param: proxy_pac: enter a path of proxy.pac file
     :return: driver: selenium.webdriver.Firefox with settings.
     """
     options = webdriver.FirefoxOptions()
-    if not show:
+    if not SHOW:
         options.arguments.append("-headless")  # disable visibility of window
-    if proxy:
-        if proxy_type == "tor":
+    if PROXY:
+        if PROXY_TYPE == "tor":
             options.set_preference("network.proxy.type", 1)
-            options.set_preference("network.proxy.socks", proxy_http)
-            options.set_preference("network.proxy.socks_port", proxy_port)
+            options.set_preference("network.proxy.socks", PROXY_HTTP)
+            options.set_preference("network.proxy.socks_port", PROXY_PORT)
             options.set_preference("network.proxy.socks_remote_dns", False)
-        elif proxy_type == "proxy":
+        elif PROXY_TYPE == "proxy":
             options.set_preference("network.proxy.type", 1)
-            options.set_preference("network.proxy.http", proxy_http)
-            options.set_preference("network.proxy.http_port", proxy_port)
-            options.set_preference("network.proxy.ssl", proxy_http)
-            options.set_preference("network.proxy.ssl_port", proxy_port)
-        elif proxy_type == "proxy_pac":
+            options.set_preference("network.proxy.http", PROXY_HTTP)
+            options.set_preference("network.proxy.http_port", PROXY_PORT)
+            options.set_preference("network.proxy.ssl", PROXY_HTTP)
+            options.set_preference("network.proxy.ssl_port", PROXY_PORT)
+        elif PROXY_TYPE == "proxy_pac":
             options.set_preference("network.proxy.type", 2)
-            options.set_preference("network.proxy.autoconfig_url", proxy_pac)
+            options.set_preference("network.proxy.autoconfig_url", PROXY_PAC)
     # set firefox options
     driver = webdriver.Firefox(options=options)
     # set wait of page load
@@ -107,33 +108,12 @@ def parse_page() -> list[dict]:
     return links
 
 
-def main(search: str,
-         show: bool = False,
-         proxy: bool = False,
-         proxy_type: str = '',
-         proxy_http: str = '',
-         proxy_port: int = 80,
-         proxy_pac: str = ''):
+def main(search: str):
     """
     Call all functions for get links from Google searched page.
-    :param show: Show firefox webdriver window
-    :param proxy: enable proxy
-    :param proxy_type: enter proxy type, valid values:
-                'tor'—for connect to tor proxy, 
-                'proxy'—for connect to proxy,
-                'proxy_pac'—for connect by proxy.pac file or net address of proxy.pac file
-    :param proxy_http: enter ip of http proxy
-    :param proxy_port: enter port http proxy
-    :param proxy_pac: enter a path of proxy.pac file
     :param search: String for enter Google.
     """
-    driver = init_driver(
-        show=show,
-        proxy=proxy,
-        proxy_type=proxy_type,
-        proxy_http=proxy_http,
-        proxy_port=proxy_port,
-        proxy_pac=proxy_pac)
+    driver = init_driver()
 
     get_page_by_searched_text(driver, search)
     links = parse_page()
@@ -148,9 +128,4 @@ def main(search: str,
 
 
 if __name__ == "__main__":
-    main("python projects", show=True, proxy=True, proxy_type="tor",
-         proxy_http='127.0.0.1', proxy_port=9050)
-    # main('python projects', show=True, proxy=True, proxy_type='proxy_pac',
-    #      proxy_pac='https://antizapret.prostovpn.org/proxy.pac')
-    # main('python projects', show=True, proxy=True, proxy_type='proxy',
-    #      proxy_http='127.0.0.1', proxy_port=80)
+    main(input("type text for search in Google:\n"))
